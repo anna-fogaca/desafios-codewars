@@ -1,0 +1,45 @@
+/*
+ENUNCIADO: 
+Um triângulo é chamado de triângulo equável se sua área for igual ao seu perímetro.
+Retorne verdadeiro se for um triângulo equável, caso contrário, retorne falso.
+!! Você receberá o comprimento dos lados do triângulo
+
+!! OBS: Realmente, na  parte de testes do CodeWars, tem o comprimeto dos lados, mas, decidi incluir onde o usuário pode digitar os valores!
+*/
+
+#include <stdio.h>
+#include <stdbool.h>
+#include <math.h> 
+
+bool equable_triangle(float a, float b, float c) { 
+  float p = a + b + c; 
+  float s = p/2; 
+  float area = sqrt(s * (s - a) * (s - b) * (s - c));
+  
+  if (area == p) {
+    printf("A área é igual o perimetro, é um triângulo equável");
+    return true;
+  }
+  else {
+    printf("A área não é igual o perimetro!");
+    return false; 
+  }
+}
+
+int main(void) {
+  float a, b, c; 
+  printf("Digite o valor do lado A: ");
+  scanf("%f", &a);
+  printf("\nDigite o valor do lado B: ");
+  scanf("%f", &b);
+  printf("\nDigite o valor do lado C: ");
+  scanf("%f", &c);
+  
+  if (a <= 0 || b <= 0 || c <= 0) {
+    printf("Para ser um triângulo, os lados precisam ser maiores que zero!\n");
+  } else if (a >= b + c || b >= a + c || c >= a + b) {
+    printf("Os lados digitados não formam um triângulo!\n");
+  } else {
+    equable_triangle(a, b, c);
+  }
+}
