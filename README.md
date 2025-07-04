@@ -20,11 +20,11 @@ Aqui você vai encontrar soluções **comentadas**, **testadas** e **organizadas
 
 📂 desafios-codewars
 
-├── 📁 c            → Desafios resolvidos em C
+├── 📁 desafios-em-c            → Desafios resolvidos em C
 
-├── 📁 python       → Desafios resolvidos em Python
+├── 📁 desafios-em-python       → Desafios resolvidos em Python
 
-├── 📁 javascript   → Desafios resolvidos em JavaScript
+├── 📁 desafios-em-javascript   → Desafios resolvidos em JavaScript
 
 └── 📁 outros       → Em breve: Java e Kotlin
 
