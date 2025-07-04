@@ -1,0 +1,40 @@
+/* ENUNCIADO: Você deve escrever uma função que receba um número inteiro positivo n e:
+1) Calcule a soma dos dígitos de n.
+2) Multiplique essa soma por 3.
+3) Retorne true se o resultado for um múltiplo de 7, senão false. */
+
+#include <stdbool.h>
+#include <stdio.h> 
+
+bool is_magic_sum(int n) {
+    int soma = 0; 
+    while(n != 0) {
+        soma += n % 10; 
+        n = n / 10;
+        printf("%d\n", soma); // DEBUG
+    }
+    
+    int mult = soma * 3; 
+    
+    if (mult % 7 == 0) { /* aqui ele está pegando o resto da divisão (%) por 7 e vendo se é 0, se for
+       é multiplo, se for maior que zero, não é multiplo */
+       printf("É múltiplo de 7! Valor: %d\n", mult);
+       return true; 
+    } else {
+        printf("Não é múltiplo de 7! Que pena :(");
+        return false; 
+    }
+}
+
+int main (void) {
+    int n; 
+    printf("Digite um número: \n");
+    scanf("%d", &n);
+    if (n > 0) {
+        bool resultado = is_magic_sum(n);
+        printf("Resultado: %s\n", resultado ? "true" : "false");
+    } else {
+        printf("Você digitou um número negativo, que pena! >:(");
+    }
+    
+}
